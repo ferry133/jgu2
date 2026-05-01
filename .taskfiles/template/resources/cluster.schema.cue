@@ -21,7 +21,9 @@ import (
 	repository_visibility?: *"public" | "private"
 	cloudflare_domain: net.FQDN
 	cloudflare_token: string
+	cloudflare_tunnel_token?: string & !=""
 	cloudflare_gateway_addr: net.IPv4 & !=cluster_api_addr & !=cluster_gateway_addr & !=cluster_dns_gateway_addr
+	github_webhook_token?: string & !=""
 	cilium_bgp_router_addr?: net.IPv4 & !=""
 	cilium_bgp_router_asn?: string & !=""
 	cilium_bgp_node_asn?: string & !=""
@@ -29,6 +31,7 @@ import (
 	nas_server?: net.IPv4 & !=""
 	nas_path?: string & !=""
 	nas_coding_path?: string & !=""
+	extras?: [...string]
 	claude_instances?: [...string]
 	ttyd_credential?: string & !=""
 }
